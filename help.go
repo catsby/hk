@@ -203,7 +203,7 @@ func printUsage() {
 		runListNames = append(runListNames, plugins[i].Name())
 	}
 
-	usageTemplate.Execute(os.Stderr, struct {
+	usageTemplate.Execute(os.Stdout, struct {
 		Commands       []*Command
 		Plugins        []plugin
 		Dev            bool
@@ -224,7 +224,7 @@ func printExtra() {
 		}
 	}
 
-	extraTemplate.Execute(os.Stderr, struct {
+	extraTemplate.Execute(os.Stdout, struct {
 		Commands        []*Command
 		MaxRunExtraName int
 	}{
